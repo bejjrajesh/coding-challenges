@@ -1,31 +1,29 @@
 package arrays;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 public class PairOfSum {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{8, 7, 2, 5, 3, 1};
 
-        findPairsWithSum(arr, 10);
+        int[] arr = new int[]{8, 7, 2, 5, 3, 1};
+        findPairsWithBruteForce(arr, 10);
         findPairsWithSumBetterTime(arr, 10);
         findPairsWithSumBestTime(arr,10);
 
         int[] ex2 = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
-        findPairsWithSum(ex2, 17);
+        findPairsWithBruteForce(ex2, 17);
         findPairsWithSumBetterTime(ex2, 17);
         findPairsWithSumBestTime(ex2,17);
-
     }
 
     /*
        This is the naive approach with two loops and in each iteration see if its sum matches with expected sum
        Since we are using two loops -> Time Complexity - O(n2)
     */
-    public static int[] findPairsWithSum(int[] arr, int sum) {
+    public static int[] findPairsWithBruteForce(int[] arr, int sum) {
         System.out.println("\nNaive Solution\n=======================");
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
@@ -38,7 +36,8 @@ public class PairOfSum {
     }
 
     /*
-    In this approach we try to reduce two loops into one loop. In each iteration we check if the remaining sum is present in the array.
+    In this approach we try to reduce two loops into one loop. In each iteration we remove current element value from the sum and
+        check if the remaining sum is present in the array.
      */
     public static void findPairsWithSumBetterTime(int [] arr,int targetSum){
 
