@@ -17,7 +17,7 @@ public class DuplicateZeros {
     We have to duplicate an item at index i, and if we directly duplicate the element, it will have cascading effect and all array elements will be set to 0.
     To avoid that instead having duplicate zero, use some constant for duplicate index such Integer.MAX_VALUE and after shifting all elements,
     loop through the array elements one more time and set element to zero when you encounter the Constant.
-    Time Complexity = O(N) where N is number of elements in the array.
+    Time Complexity = O(N + N ) = O(N) where N is number of elements in the array.
     Space Complexity = O(1) we are not creating any extra array or data structure.
     */
     public static void duplicateZeros(int[] arr) {
